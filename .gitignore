@@ -148,6 +148,8 @@ nCrunchTemp_*
 
 # IDEA
 *.idea/
+.idea
+
 
 
 # MightyMoose
