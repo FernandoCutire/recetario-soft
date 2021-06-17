@@ -1,0 +1,371 @@
+<div class="row">
+  <div class="col text-center">
+    <h1 class="text-align=center">Contruye tu receta</h1>
+  </div>
+</div>
+
+<div class="row text-right">
+  <div class="col">
+    <button routerLink="/" class="btn btn-primary">
+      <i class="fa fa-arrow-left"></i>
+      Regresar
+    </button>
+  </div>
+</div>
+
+<div class="row animated fadeIn faster">
+  <div class="col">
+    <form (ngSubmit)="manageCase(caseForm)" #caseForm="ngForm">
+      <div class="form-group">
+        <label>Id</label>
+        <input
+          type="text"
+          placeholder="Id del caso"
+          class="form-control"
+          disabled="disable"
+          name="id"
+          [(ngModel)]="caseModel.id"
+        />
+        <small class="form-text text-muted">
+          Este es el Id del caso generado en la base de datos
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label>Nombre de la receta</label>
+        <input
+          type="text"
+          required
+          placeholder="Arroz con zanahoria"
+          class="form-control"
+          name="name"
+          [(ngModel)]="caseModel.name"
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Calorías</label>
+        <input
+          type="number"
+          required
+          placeholder="220"
+          class="form-control"
+          name="calories"
+          [(ngModel)]="caseModel.calories"
+        />
+      </div>
+      <div class="form-group">
+        <label>Tiempo de cocción (en horas, sin minutos) </label>
+        <input
+          type="number"
+          required
+          placeholder="1"
+          class="form-control"
+          name="cookingTime"
+          [(ngModel)]="caseModel.cookingTime"
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Porciones (e.g 2) </label>
+        <input
+          type="number"
+          required
+          placeholder="4"
+          class="form-control"
+          name="portions"
+          [(ngModel)]="caseModel.portions"
+        />
+      </div>
+
+      <!-- Tabla  -->
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Ingredientes</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Medidas</th>
+          </tr>
+        </thead>
+        <tbody>
+        <!-- Primera fila  -->
+          <tr>
+            <td>
+                <input
+                  type="text"
+                  required
+                  placeholder="Arroz"
+                  class="form-control"
+                  name="ingredients_1"
+                  [(ngModel)]="caseModel.ingredients[0]"
+                />
+            </td>
+            <td>
+              <input
+                type="number"
+                required
+                placeholder="1"
+                class="form-control"
+                name="quantity-1"
+                [(ngModel)]="caseModel.quantity[0]"
+              />
+            </td>
+            <td>
+              <div class="form-group">
+                <input
+                  type="text"
+                  required
+                  placeholder="taza"
+                  class="form-control"
+                  name="measures-1"
+                  [(ngModel)]="caseModel.measures[0]"
+                />
+              </div>
+            </td>
+          </tr>
+        <!-- Segunda fila  -->
+        <tr>
+            <td>
+              <input
+                type="text"
+                required
+                placeholder="Zanahoria"
+                class="form-control"
+                name="ingredient-2"
+                [(ngModel)]="caseModel.ingredients[1]"
+              />
+            </td>
+            <td>
+              <input
+                type="number"
+                required
+                placeholder="1"
+                class="form-control"
+                name="quantity-2"
+                [(ngModel)]="caseModel.quantity[1]"
+              />
+            </td>
+            <td>
+              <div class="form-group">
+                <input
+                  type="text"
+                  required
+                  placeholder="unidad"
+                  class="form-control"
+                  name="measure-2"
+                  [(ngModel)]="caseModel.measures[1]"
+                />
+              </div>
+            </td>
+          </tr>
+        <!-- Tercera fila  -->
+        <tr>
+            <td>
+              <input
+                type="text"
+                required
+                placeholder="Aceite"
+                class="form-control"
+                name="ingredient-3"
+                [(ngModel)]="caseModel.ingredients[2]"
+              />
+            </td>
+            <td>
+              <input
+                type="number"
+                required
+                placeholder="1"
+                class="form-control"
+                name="quantity-3"
+                [(ngModel)]="caseModel.quantity[2]"
+              />
+            </td>
+            <td>
+              <div class="form-group">
+                <input
+                  type="text"
+                  required
+                  placeholder="cucharadita"
+                  class="form-control"
+                  name="measures-3"
+                  [(ngModel)]="caseModel.measures[2]"
+                />
+              </div>
+            </td>
+          </tr>
+
+        <!-- Cuarta fila  -->
+          <tr>
+            <td>
+              <input
+                      type="text"
+                      required
+                      placeholder="Ajo"
+                      class="form-control"
+                      name="ingredient-4"
+                      [(ngModel)]="caseModel.ingredients[3]"
+              />
+            </td>
+            <td>
+              <input
+                      type="number"
+                      required
+                      placeholder="1"
+                      class="form-control"
+                      name="quantity-4"
+                      [(ngModel)]="caseModel.quantity[3]"
+              />
+            </td>
+            <td>
+              <div class="form-group">
+                <input
+                        type="text"
+                        required
+                        placeholder="Diente"
+                        class="form-control"
+                        name="measures-4"
+                        [(ngModel)]="caseModel.measures[3]"
+                />
+              </div>
+            </td>
+          </tr>
+        <!-- Quinta fila  -->
+          <tr>
+            <td>
+              <input
+                      type="text"
+                      required
+                      placeholder="Sal"
+                      class="form-control"
+                      name="ingredient-5"
+                      [(ngModel)]="caseModel.ingredients[4]"
+              />
+            </td>
+            <td>
+              <input
+                      type="number"
+                      required
+                      placeholder="1"
+                      class="form-control"
+                      name="quantity-5"
+                      [(ngModel)]="caseModel.quantity[4]"
+              />
+            </td>
+            <td>
+              <div class="form-group">
+                <input
+                        type="text"
+                        required
+                        placeholder="cucharadita"
+                        class="form-control"
+                        name="measures-5"
+                        [(ngModel)]="caseModel.measures[3]"
+                />
+              </div>
+            </td>
+          </tr>
+        <!-- Séptima fila  -->
+          <tr>
+            <td>
+              <input
+                      type="text"
+                      required
+                      placeholder="Agua"
+                      class="form-control"
+                      name="ingredient-7"
+                      [(ngModel)]="caseModel.ingredients[6]"
+              />
+            </td>
+            <td>
+              <input
+                      type="number"
+                      required
+                      placeholder="2"
+                      class="form-control"
+                      name="quantity-7"
+                      [(ngModel)]="caseModel.quantity[6]"
+              />
+            </td>
+            <td>
+              <div class="form-group">
+                <input
+                        type="text"
+                        required
+                        placeholder="taza"
+                        class="form-control"
+                        name="measures-7"
+                        [(ngModel)]="caseModel.measures[6]"
+                />
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="form-group">
+        <label for="exampleFormControlFile1">Sube una imagen</label>
+        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+      </div>
+
+      <div class="form-group">
+        <label>Horario</label>
+        <input
+          type="text"
+          required
+          placeholder="Almuerzo"
+          class="form-control"
+          name="time"
+          [(ngModel)]="caseModel.times"
+        />
+      </div>
+
+      <div class="form-group">
+        <label> Indicaciones </label>
+        <textarea
+  rows="5"
+  cols="20"
+  placeholder="1. Pelar y rallar las zanahorias. Poner en el caldero u olla arrocera con el aceite, dejar sofreír.
+2. Cuando vemos que esta sofrito casi a punto agregamos el diente de ajo dejamos sofreír un minuto y resolvemos.
+3. Agregamos el agua la sal y dejamos hervir por cinco minutos.
+4. Agregamos el arroz dejamos cocinar, cuando esté seco lo tapamos y sigue la cocción a fuego lento, hasta que el arroz esté listo.
+"
+  class="form-control"
+  name="tutorial"
+  [(ngModel)]="caseModel.tutorial"
+>
+</textarea>
+      </div>
+
+<!--      <div class="form-group">-->
+<!--        <label>Estado</label>-->
+<!--        <br />-->
+<!--        <button-->
+<!--          *ngIf="caseModel.state == 'Abierto'"-->
+<!--          (click)="caseModel.state = 'Cerrado'"-->
+<!--          class="btn btn-outline-success w-50"-->
+<!--          type="button"-->
+<!--        >-->
+<!--          <i class="fa fa-smile-wink"></i>-->
+<!--          Abierto-->
+<!--        </button>-->
+<!--        <button-->
+<!--          *ngIf="caseModel.state == 'Cerrado'"-->
+<!--          (click)="caseModel.state = 'Abierto'"-->
+<!--          class="btn btn-outline-danger w-50"-->
+<!--          type="button"-->
+<!--        >-->
+<!--          <i class="fa fa-dizzy"></i>-->
+<!--          Cerrado-->
+<!--        </button>-->
+<!--      </div>-->
+
+      <hr />
+      <div class="form-group text-center">
+        <button type="submit" class="btn btn-primary w-25">
+          <i class="fa fa-save"></i>
+          Guardar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
