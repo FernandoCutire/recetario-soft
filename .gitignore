@@ -238,7 +238,6 @@ orleans.codegen.cs
 
 # Including strong name files can present a security risk
 # (https://github.com/github/gitignore/pull/2483#issue-259490424)
-temp_auto_push.bat
 #*.snk
 
 # Since there are multiple workflows, uncomment next line to ignore bower_components
@@ -479,4 +478,3 @@ dist
 .firebase
 firebase.json
 .firebaserc
-branch_structure.json
